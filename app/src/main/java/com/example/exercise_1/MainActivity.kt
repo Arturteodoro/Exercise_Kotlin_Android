@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         number.text = sharedPreference.getString("valor","").toString()
         count2 = sharedPreference.getString("count2","").toString().toIntOrNull()
 
-        count = number.text.toString().toInt()
 
-        if (count2 == null){
+
+        if (count2 == 0){
             count = 0
 
         }
@@ -46,8 +46,9 @@ class MainActivity : AppCompatActivity() {
 
             var valor = value?.getString("Nome")
 
-            count = valor.toString().toInt()
-            number.text = valor.toString()
+            //count = valor.toString().toInt()
+            count = sharedPreference.getString("valor","").toString().toInt()
+            number.text = count.toString()
         }
 
 
